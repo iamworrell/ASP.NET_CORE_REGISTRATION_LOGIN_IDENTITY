@@ -1,0 +1,18 @@
+﻿@page
+@model signup_login.Pages.LogoutModel
+@{
+}
+
+<form method="post">
+    <center style="position: relative; top: 20em;">
+    <p>Are You Sure You Want To Logout?</p>
+    <p>
+        <!--
+            The asp-page-handler values determine which OnPost Method is called.
+            When the Button is Clicked
+        -->
+            <button asp-page-handler="Logout">Yes</button>
+            <button asp-page="Index">No</button>
+    </p>
+    </center>
+</form>

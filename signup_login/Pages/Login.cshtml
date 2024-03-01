@@ -1,0 +1,38 @@
+﻿@page
+@model signup_login.Pages.LoginModel
+@{
+}
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Log In</h1>
+        @if (!ModelState.IsValid)
+        {
+            <p style="color: crimson">@Model.attempt</p>
+        }
+        <form method="post">
+            <!-- attributes such as:
+                             asp-for & asp-validation-for
+                             automatically link
+            -->
+            <div>
+                <label class="" asp-for="Model.Email"> Email Address</label>
+                <input type="text" asp-for="Model.Email" class="form-control" />
+                <span asp-validation-for="Model.Email" class="text-danger"></span>
+            </div>
+            <div>
+                <label class="" asp-for="Model.Password">Password</label>
+                <input type="password" asp-for="Model.Password" class="form-control" />
+                <span asp-validation-for="Model.Password" class="text-danger"></span>
+            </div>
+
+            <div>
+                <button type="submit" class="">Login</button>
+            </div>
+        </form>
+        <p>Not a Member? </p><a asp-area="" asp-page="Register">Register</a>
+    </body>
+</html>
